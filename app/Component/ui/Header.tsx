@@ -7,8 +7,8 @@ import React from 'react'
 const Header = () => {
   return (
     <div>
-    <div className='flex justify-between '>
-        <div className='flex items-center'>
+    <div className='flex justify-between mb-16 '>
+        <div className='flex items-center '>
             <p className='font-bold text-3xl'>taviTask</p>
         </div>
        <div className='flex gap-2'>

@@ -1,4 +1,4 @@
-
+import SignForm from '@/app/Component/SignUp/SignForm'
 
 
 
@@ -6,7 +6,11 @@ import React from 'react'
 
 const SignUp = () => {
   return (
-    <div>SignUp page</div>
+    <div className='h-screen flex items-center justify-center'>
+      
+      <SignForm />
+      
+    </div>
   )
 }
 
