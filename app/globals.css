@@ -18,6 +18,10 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  /* background-image: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGJqdW0xcTZmd2ZkOHJkb2NzdjRnZ3kwb3VtOTQ1ZmR3bm9kcDRnYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RFsddEHX0UOQ/giphy.gif'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 @layer utilities {

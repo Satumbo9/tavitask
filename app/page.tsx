@@ -3,10 +3,11 @@ import LogIn from "./Ath/LogIn/page";
 import TaviTask from "./TaskMain/taskMain";
 
 
-
+//MainPage 
 export default function Home() {
   return (
-    <main>
+    <main className=" bg-gray-950 ">
+
       <TaviTask />
     </main>
   );

@@ -1,65 +1,49 @@
 "use client";
 import React from 'react';
 import { task, todoListTaskPlaceHolder } from '../Component/const/todoListPlaceHolder';
-import { Delete } from 'lucide-react';
+import { Delete, Trash2 } from 'lucide-react';
 import { useState } from 'react';
-
+import FormData from '../Component/ui/FormData';
+import Header from '../Component/ui/Header';
 
 const TaviTask = () => {
 
-    const date = new Date();
-    const [aux, setAux] = useState<task>();
-    const [data, setData] = useState<task[]>(
-        [
-            {
-                id:'1',
-                task:'Washing my car',
-                formateDate: (`${date.getDay()}-${date.getMonth() + 1}-${date.getFullYear()} `),
-                status: true,
-                icon: 'delete'
-            },
-            {
-                id:'2',
-                task:'Talk to my girl',
-                formateDate: (`${date.getDay()}-${date.getMonth() + 1}-${date.getFullYear()} `),
-                status: false,
-                icon: 'delete'
-            },
-            {
-                id:'3',
-                task:'Go to school',
-                formateDate: (`${date.getDay()}-${date.getMonth() + 1}-${date.getFullYear()} `),
-                status: true,
-                icon: 'delete'
-            }
-        ] 
-    );
+    const Names = ['John', 'Eddie', 'Silvie', 'Lucas' ];
+    const randNamesSelect = Math.floor(Math.random() * Names.length);
 
-    console.log("DAY: " + date.getDay());
-    const handleClick = (value: string) => {
-        const removed = data.filter(item => item.id !== value);
-        setData(removed)
-        console.log(value);
-    }
+//MainSection 
 
   return (
-    <div>tavitask Page
+    <section className=' h-screen flex flex-col items-center justify-center '>
 
-        {data.map((items)=> {
-            if(items.status)
-                {
-                return (
-                <div key={items.id} className='flex gap-2 bg-gray-200 my-5 mx-10'>
-                    <p>{items.task}</p>
-                    <p>{items.formateDate}</p>
-                    <Delete className='cursor-pointer' onClick={() => handleClick(items.id)}/>
-                </div>
-                )
-            }
-            
-        })}
-        
-    </div>
+        <div className='w-[600px] bg-white p-10 rounded-md'>
+        <Header />
+        <FormData />
+        <div className='mt-5'>
+            {todoListTaskPlaceHolder.map((item)=>(
+                <div className='flex  text-2xl mt-2 items-center justify-between '>
+                    <div className='flex items-center gap-5'>
+                        <input className='h-10 w-8	' type="checkbox" />
+                       <p className=''> {item.task} </p>
+                    </div>
+
+                    <div className='flex items-center'>
+                        {React.createElement(Trash2,{
+                            style:{
+                                color:"#006BFF"
+                            }
+                        })}
+                    </div>
+
+                    
+                    </div>
+            ))}
+
+        </div>
+        </div>
+  
+
+    </section>
     
   )
 }
